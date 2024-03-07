@@ -1,0 +1,25 @@
+<section class="mx-auto center-L-R ">
+  <div class="bg-main-light p-4 rounded my-2">
+    <h1 class="text-center text-main">Verification</h1>
+    <form [formGroup]="verifyForm" (ngSubmit)="handleVerfiyForm()">
+      <div>
+        <label for="code">
+          Write your code :
+        </label>
+        <input #code formControlName="resetCode" class="form-control" type="tel" id="code">
+        <div class="alert alert-danger mt-2"
+          *ngIf="verifyForm.get('resetCode')?.errors && (verifyForm.get('resetCode')?.touched|| code.value.length)">
+          <p *ngIf="verifyForm.get('resetCode')?.getError('required')">Code is required</p>
+          <p *ngIf="verifyForm.get('resetCode')?.getError('pattern')">Invalid code</p>
+        </div>
+      </div>
+      <div class="pt-3">
+        <button class="btn-main d-block ms-auto"><i *ngIf="isloading" class="fas fa-spinner fa-spin"></i>
+          Verify</button>
+      </div>
+      <div *ngIf="msgError" class="alert text-center alert-danger mt-2">
+        <p>{{msgError}}</p>
+      </div>
+    </form>
+  </div>
+</section>

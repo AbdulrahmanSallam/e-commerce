@@ -1,0 +1,70 @@
+<section class=" pb-5">
+  <!-- carousal -->
+  <div class="row g-0">
+    <div class="col-9">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide><img src="./assets/images/main-slider-1.jpeg" class="w-100 d-block" height="350"
+            alt=""></ng-template>
+        <ng-template carouselSlide><img src="./assets/images/main-slider-2.jpeg" class="w-100 d-block" height="350"
+            alt=""></ng-template>
+        <ng-template carouselSlide><img src="./assets/images/main-slider-3.jpeg" class="w-100 d-block" height="350"
+            alt=""></ng-template>
+      </owl-carousel-o>
+    </div>
+    <div class="col-3">
+      <img src="./assets/images/blog-img-1.jpeg" height="175" class="w-100" alt="">
+      <img src="./assets/images/blog-img-2.jpeg" height="175" class="w-100" alt="">
+    </div>
+  </div>
+  <!-- cat carousal -->
+  <div>
+    <h1 class="h5">Shop Popular Categories</h1>
+    <owl-carousel-o [options]="CategoriesOptions">
+      <ng-container *ngFor="let category of allGategories">
+        <ng-template carouselSlide>
+          <div>
+            <img [src]="category.image" class="cat-img w-100 d-block" [alt]="category.name">
+            <p class="text-center">{{category.name}}</p>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+  <!-- products -->
+  <div class="pt-1">
+    <div>
+      <input type="search" class="form-control srh-input w-75 mx-auto" placeholder="Search..." [(ngModel)]="search">
+    </div>
+
+    <div class="row g-4 py-4">
+      <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let product of allProducts| search: search">
+        <div class="px-5 px-sm-0">
+          <div class="product p-3 d-flex flex-column justify-content-between">
+            <div class="cursor-pointer" [routerLink]="['/details',product.id]">
+              <div class="px-5 px-sm-0"><img [src]="product.imageCover" class="d-block img-fluid" [alt]="product.title">
+              </div>
+              <div class="pt-2">
+                <h2 class="h6 text-main">{{product.category.name}}</h2>
+                <h3 class="h5">{{product.title|limitText:2}}</h3>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span>{{product.price|currency:" EGP "}}</span>
+                <span><i class="fas fa-star rating-color"></i> {{product.ratingsAverage}}</span>
+              </div>
+              <div class="d-flex align-items-center mt-2">
+                <button (click)="addToCart(product.id)" class="btn-main d-block w-100 me-2 ">Add to cart</button>
+                <div>
+                  <i [class.text-danger]="isInWishlist(product.id)" (click)="addToWishList(product.id,$event)"
+                    class="fas fa-heart p-2 cursor-pointer" style="font-size: 25px;"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

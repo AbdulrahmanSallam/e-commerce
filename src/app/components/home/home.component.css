@@ -1,0 +1,13 @@
+.srh-input {
+  border: 2px solid var(--main-color) !important;
+}
+
+.cat-img {
+  height: 200px;
+}
+
+@media (max-width:992px) {
+  .cat-img {
+    height: 150px;
+  }
+}

@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg bg-main-light fixed-top">
+  <div class="container">
+    <div class="me-2">
+      <img src="./assets/images/freshcart-logo.svg" class="w-100" alt="freshcartlogo">
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto  mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-capitalize" routerLinkActive="active-link" routerLink="home">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-capitalize" routerLinkActive="active-link" routerLink="cart">cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-capitalize" routerLinkActive="active-link" routerLink="wishlist">wishlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-capitalize" routerLinkActive="active-link" routerLink="products">products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-capitalize" routerLinkActive="active-link" routerLink="categories">categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-capitalize" routerLinkActive="active-link" routerLink="brands">brands</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link cursor-pointer" href="https://www.instagram.com"> <i class="fab fa-instagram"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link cursor-pointer" href="https://www.facebook.com"> <i class="fab fa-facebook"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link cursor-pointer" href="https://www.tiktok.com"> <i class="fab fa-tiktok"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link cursor-pointer" href="https://www.twitter.com"> <i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link cursor-pointer" href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link cursor-pointer" href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link cursor-pointer text-capitalize" (click)="logoutUser()">signout</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
